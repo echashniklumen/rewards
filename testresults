@@ -1,0 +1,123 @@
+PS C:\EIC\DATA\w_2409_1\rewards> mvn test
+[INFO] Scanning for projects...
+[INFO]
+[INFO] --------------------< com.charter.example:rewards >---------------------
+[INFO] Building rewards 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ rewards ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO]
+[INFO] --- compiler:3.11.0:compile (default-compile) @ rewards ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 8 source files with javac [debug release 21] to target\classes
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ rewards ---
+[INFO] skip non existing resourceDirectory C:\EIC\DATA\w_2409_1\rewards\src\test\resources
+[INFO]
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ rewards ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug release 21] to target\test-classes
+[INFO]
+[INFO] --- surefire:3.0.0:test (default-test) @ rewards ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.charter.example.rewards.RewardsApplicationTests
+16:29:21.257 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.charter.example.rewards.RewardsApplicationTests]: RewardsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:29:21.367 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.charter.example.rewards.RewardsApplication for test class com.charter.example.rewards.RewardsApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.2)
+
+2024-11-08T16:29:21.724-07:00  INFO 8228 --- [           main] c.c.e.rewards.RewardsApplicationTests    : Starting RewardsApplicationTests using Java 21.0.4 with PID 8228 (started by AC23946 in C:\EIC\DATA\w_2409_1\rewards)
+2024-11-08T16:29:21.725-07:00  INFO 8228 --- [           main] c.c.e.rewards.RewardsApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-11-08T16:29:22.278-07:00  INFO 8228 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-08T16:29:22.341-07:00  INFO 8228 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
+2024-11-08T16:29:22.648-07:00  INFO 8228 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-08T16:29:22.832-07:00  INFO 8228 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-11-08T16:29:22.833-07:00  INFO 8228 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-08T16:29:22.963-07:00  INFO 8228 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-08T16:29:23.004-07:00  INFO 8228 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2024-11-08T16:29:23.005-07:00  INFO 8228 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-11-08T16:29:23.178-07:00  INFO 8228 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-11-08T16:29:23.378-07:00  INFO 8228 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-08T16:29:23.609-07:00  INFO 8228 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-11-08T16:29:24.042-07:00  INFO 8228 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-11-08T16:29:24.052-07:00 DEBUG 8228 --- [           main] org.hibernate.SQL                        :
+    drop table if exists customer cascade
+Hibernate:
+    drop table if exists customer cascade
+2024-11-08T16:29:24.053-07:00 DEBUG 8228 --- [           main] org.hibernate.SQL                        :
+    drop table if exists transaction cascade
+Hibernate:
+    drop table if exists transaction cascade
+2024-11-08T16:29:24.056-07:00 DEBUG 8228 --- [           main] org.hibernate.SQL                        :
+    create table customer (
+        id bigint generated by default as identity,
+        name varchar(255),
+        primary key (id)
+    )
+Hibernate:
+    create table customer (
+        id bigint generated by default as identity,
+        name varchar(255),
+        primary key (id)
+    )
+2024-11-08T16:29:24.057-07:00 DEBUG 8228 --- [           main] org.hibernate.SQL                        :
+    create table transaction (
+        amount float(53) not null,
+        date date,
+        customer_id bigint,
+        id bigint generated by default as identity,
+        primary key (id)
+    )
+Hibernate:
+    create table transaction (
+        amount float(53) not null,
+        date date,
+        customer_id bigint,
+        id bigint generated by default as identity,
+        primary key (id)
+    )
+2024-11-08T16:29:24.058-07:00 DEBUG 8228 --- [           main] org.hibernate.SQL                        :
+    alter table if exists transaction
+       add constraint FKnbpjofb5abhjg5hiovi0t3k57
+       foreign key (customer_id)
+       references customer
+Hibernate:
+    alter table if exists transaction
+       add constraint FKnbpjofb5abhjg5hiovi0t3k57
+       foreign key (customer_id)
+       references customer
+2024-11-08T16:29:24.062-07:00  INFO 8228 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-08T16:29:24.578-07:00  WARN 8228 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-08T16:29:24.837-07:00  INFO 8228 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-11-08T16:29:24.914-07:00  INFO 8228 --- [           main] c.c.e.rewards.RewardsApplicationTests    : Started RewardsApplicationTests in 3.424 seconds (process running for 4.406)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\ac23946\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.5\byte-buddy-agent-1.14.5.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.437 s - in com.charter.example.rewards.RewardsApplicationTests
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.738 s
+[INFO] Finished at: 2024-11-08T16:29:25-07:00
+[INFO] ------------------------------------------------------------------------
+P
